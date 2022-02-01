@@ -1,0 +1,7 @@
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\bin\SupermarketSystem.dll.config
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\bin\SupermarketSystem.dll
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\bin\SupermarketSystem.pdb
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\obj\Debug\SupermarketSystem.csproj.AssemblyReference.cache
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\obj\Debug\SupermarketSystem.csproj.CoreCompileInputs.cache
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\obj\Debug\SupermarketSystem.dll
+C:\Users\Jeffrey\OneDrive\Documentos\GitHub\SupermarketSystem\SupermarketSystem\SupermarketSystem\obj\Debug\SupermarketSystem.pdb
