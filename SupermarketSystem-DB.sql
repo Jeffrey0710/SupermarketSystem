@@ -82,3 +82,14 @@ create table sale(
     constraint FK_idCheckoutCounter_Sale foreign key(idCheckoutCounter) references checkoutCounter(idCheckoutCounter)
 );
 
+--------------------------------------------
+
+insert into employees (employeeName, email, address, phoneNumber)
+values ('Dave Jhonson', 'djhonson@gmail.com', 'New York', '3459384');
+
+select * from users;
+
+insert into users (idEmployee, userName, userPassword, nationality, alternativeEmail, favoriteFood)
+values (1, 'admin', 'admin', 'American', 'djhonsonA@gmail.com', 'Pizza');
+
+
