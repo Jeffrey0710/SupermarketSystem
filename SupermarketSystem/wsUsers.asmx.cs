@@ -43,7 +43,8 @@ namespace SupermarketSystem
         }
 
         [WebMethod]
-        public Int32 delete_User(Int32 idUser) {
+        public Int32 delete_User(Int32 idUser) 
+        {
             return new Classes.csUser().deleteUser(idUser);
         }
     }

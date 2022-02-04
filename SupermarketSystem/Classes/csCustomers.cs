@@ -8,10 +8,10 @@ using MySql.Data.MySqlClient;
 
 namespace SupermarketSystem.Classes
 {
-    public class csUser
+    public class csCustomers
     {
         DataSet ds = new DataSet();
-        public DataSet list_Users() {
+        public DataSet list_Customers() {
             try
             {
                 MySqlConnection cn = new MySqlConnection();
@@ -19,27 +19,27 @@ namespace SupermarketSystem.Classes
                 cn.Open();
 
                 MySqlDataAdapter da;
-                da = new MySqlDataAdapter("select * from users", cn);
+                da = new MySqlDataAdapter("select * from customers", cn);
                 da.Fill(ds);
 
                 cn.Close();
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 throw new Exception("Error reading ", ex);
             }
             return ds;
         }
 
-        public DataSet user(string user, string password){
-            DataSet ds = new DataSet();
-            try {
+        public DataSet customer(Int32 idCustomer){
+            try 
+            {
                 MySqlConnection cn = new MySqlConnection();
                 cn.ConnectionString = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
                 cn.Open();
 
                 MySqlDataAdapter da;
-                da = new MySqlDataAdapter("select * from users where userName = '" + user + "' and userPassword = '" + password + "' ", cn);
+                da = new MySqlDataAdapter("select * from customers where idCustomer = " + idCustomer + " ", cn);
                 da.Fill(ds);
 
                 cn.Close();
@@ -51,56 +51,55 @@ namespace SupermarketSystem.Classes
             return ds;
         }
 
-        public Int32 insert_User(Int32 idEmployee, string user, string password, string nationality, string altEmail, string favFood) {
-            int result = 0;
+        public Int32 insert_Customer(string custName, Int32 ssn, string address, Int32 phoneNum) {
+            Int32 result = 0;
             try
             {
                 MySqlConnection cn = new MySqlConnection();
                 cn.ConnectionString = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
                 cn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("insert into users(idEmployee, userName, userPassword, nationality, alternativeEmail, favoriteFood)" +
-                    " values (" + idEmployee + ", '" + user + "', '" + password + "', '" + nationality + "', '" + altEmail + "', '" + favFood + "')", cn);
-
+                MySqlCommand cmd = new MySqlCommand("insert into customers(customerName, ssn, address, phoneNumber) values ('" + custName + "', " + ssn + ", '" + address + "', " + phoneNum + " ) ", cn);
                 result = cmd.ExecuteNonQuery();
+
                 cn.Close();
             }
             catch (Exception ex) 
             {
-                throw new Exception("Error reading ", ex);
+                throw new Exception("Error reading", ex);
             }
             return result;
         }
 
-        public Int32 update_User(Int32 idUser, Int32 idEmployee, string user, string password, string nationality, string altEmail, string favFood) {
-            int result = 0;
+        public Int32 update_Customer(Int32 idCustomer, string custName, Int32 ssn, string address, Int32 phoneNum) {
+            Int32 result = 0;
             try
             {
                 MySqlConnection cn = new MySqlConnection();
                 cn.ConnectionString = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
                 cn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("update users set idEmployee = '" + idEmployee + "', userName = '" + user + "', userPassword = '" + password + "', nationality = '" + nationality + "', alternativeEmail = '" + altEmail + "', favoriteFood = '" + favFood + "' where idUser = '" + idUser + "' ",cn) ;
-
+                MySqlCommand cmd = new MySqlCommand("update customers set customerName = '" + custName + "', ssn = " + ssn + ", address = '" + address + "', phoneNumber = " + phoneNum + " where idCustomer = " + idCustomer + " ", cn);
                 result = cmd.ExecuteNonQuery();
+
                 cn.Close();
             }
             catch (Exception ex) 
             {
-                throw new Exception("Error reading ", ex);
+                throw new Exception("Error reading", ex);
             }
             return result;
         }
 
-        public Int32 deleteUser(Int32 idUser) {
-            int result = 0;
+        public Int32 delete_Customer(Int32 idCustomer) {
+            Int32 result = 0;
             try
             {
                 MySqlConnection cn = new MySqlConnection();
                 cn.ConnectionString = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
                 cn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("delete from users where idUser = " + idUser + " ", cn);
+                MySqlCommand cmd = new MySqlCommand("delete from customers where idCustomer = " + idCustomer + "", cn);
                 result = cmd.ExecuteNonQuery();
 
                 cn.Close();
