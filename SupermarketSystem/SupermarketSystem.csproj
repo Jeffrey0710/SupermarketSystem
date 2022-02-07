@@ -79,11 +79,19 @@
     <Content Include="Web.config" />
     <Content Include="wsCheckoutCounter.asmx" />
     <Content Include="wsCustomers.asmx" />
+    <Content Include="wsEmployees.asmx" />
+    <Content Include="wsPaymentMethods.asmx" />
+    <Content Include="wsProducts.asmx" />
+    <Content Include="wsSuppliers.asmx" />
     <Content Include="wsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\csCheckoutCounter.cs" />
     <Compile Include="Classes\csCustomers.cs" />
+    <Compile Include="Classes\csEmployees.cs" />
+    <Compile Include="Classes\csPaymentMethods.cs" />
+    <Compile Include="Classes\csProducts.cs" />
+    <Compile Include="Classes\csSuppliers.cs" />
     <Compile Include="Classes\csUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="wsCheckoutCounter.asmx.cs">
@@ -92,6 +100,22 @@
     </Compile>
     <Compile Include="wsCustomers.asmx.cs">
       <DependentUpon>wsCustomers.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="wsEmployees.asmx.cs">
+      <DependentUpon>wsEmployees.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="wsPaymentMethods.asmx.cs">
+      <DependentUpon>wsPaymentMethods.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="wsProducts.asmx.cs">
+      <DependentUpon>wsProducts.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="wsSuppliers.asmx.cs">
+      <DependentUpon>wsSuppliers.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="wsUsers.asmx.cs">

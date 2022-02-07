@@ -17,7 +17,6 @@ namespace SupermarketSystem
     // [System.Web.Script.Services.ScriptService]
     public class wsCustomers : System.Web.Services.WebService
     {
-
         [WebMethod]
         public DataSet list_Customers()
         {
